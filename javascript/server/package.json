@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NathanCotrim/Grpc-NodeJS.git"
+    "url": "git+https://github.com/NathanCotrim/grpc-nodejs.git"
   },
   "keywords": [
     "communication",
@@ -19,9 +19,9 @@
   "author": "Nathan Cotrim <nathan.sfteng@gmail.com> (https://linktr.ee/nate.sfteng)",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/NathanCotrim/Grpc-NodeJS/issues"
+    "url": "https://github.com/NathanCotrim/grpc-nodejs/issues"
   },
-  "homepage": "https://github.com/NathanCotrim/Grpc-NodeJS#readme",
+  "homepage": "https://github.com/NathanCotrim/grpc-nodejs#readme",
   "dependencies": {
     "@grpc/grpc-js": "^1.4.5",
     "@grpc/proto-loader": "^0.6.7"

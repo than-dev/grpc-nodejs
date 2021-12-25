@@ -1,6 +1,6 @@
 const grpc = require('@grpc/grpc-js');
 const protoLoader = require('@grpc/proto-loader')
-const protoFile = require('path').resolve(__dirname, '../../proto/bookstore.proto')
+const protoFile = require('path').resolve(__dirname, '../../../proto/bookstore.proto')
 const { bookstoreImpl, authorImpl } = require('./handlers')
 const Database = new (require('./db'))()
 
