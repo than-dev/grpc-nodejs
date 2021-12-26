@@ -10,7 +10,7 @@ class DB {
   #dbPath = path.resolve(__dirname, '../db/db.json')
 
   constructor (dbPath = null) {
-    if (dbPath) this.dbPath = dbPath
+    if (dbPath) this.#dbPath = dbPath
     try {
       accessSync(this.#dbPath, constants.F_OK)
       this.load()

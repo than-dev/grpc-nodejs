@@ -17,6 +17,5 @@
     "noImplicitAny": false,
     "skipDefaultLibCheck": true
   },
-  "exclude": ["dist"],
-  "include": ["**/*"]
+  "exclude": ["dist"]
 }

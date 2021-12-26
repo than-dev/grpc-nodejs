@@ -4,8 +4,12 @@
   "description": "grpc implementation in nodejs",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build && node dist/server.js",
-    "build": "tsc"
+    "start:js": "node src/server.js",
+    "start:ts": "npm run build && node dist/server.js",
+    "build": "tsc",
+    "compile:js": "grpc_tools_node_protoc --js_out=import_style=commonjs,binary:../../proto --grpc_out=grpc_js:../../proto -I ../../proto ../../proto/*.proto",
+    "compile:ts": "grpc_tools_node_protoc --plugin=protoc-gen-ts=./node_modules/.bin/protoc-gen-ts --ts_out=grpc_js:../../proto -I ../../proto ../../proto/*.proto",
+    "compile": "npm run compile:js && npm run compile:ts"
   },
   "repository": {
     "type": "git",
