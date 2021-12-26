@@ -15,7 +15,10 @@ export class Book extends jspb.Message {
     setTitle(value: string): Book;
     getAuthor(): string;
     setAuthor(value: string): Book;
-    getDescription(): string;
+
+    hasDescription(): boolean;
+    clearDescription(): void;
+    getDescription(): string | undefined;
     setDescription(value: string): Book;
 
     hasImageUrl(): boolean;
@@ -53,7 +56,7 @@ export namespace Book {
         id: string,
         title: string,
         author: string,
-        description: string,
+        description?: string,
         imageUrl?: string,
         price?: number,
         pages?: number,
@@ -130,8 +133,8 @@ export class UpdateBookRequest extends jspb.Message {
 
     hasData(): boolean;
     clearData(): void;
-    getData(): UpdateBookRequest.UpdateData | undefined;
-    setData(value?: UpdateBookRequest.UpdateData): UpdateBookRequest;
+    getData(): UpdateBookRequest.UpdateBookData | undefined;
+    setData(value?: UpdateBookRequest.UpdateBookData): UpdateBookRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): UpdateBookRequest.AsObject;
@@ -146,58 +149,58 @@ export class UpdateBookRequest extends jspb.Message {
 export namespace UpdateBookRequest {
     export type AsObject = {
         bookid: string,
-        data?: UpdateBookRequest.UpdateData.AsObject,
+        data?: UpdateBookRequest.UpdateBookData.AsObject,
     }
 
 
-    export class UpdateData extends jspb.Message { 
+    export class UpdateBookData extends jspb.Message { 
 
         hasTitle(): boolean;
         clearTitle(): void;
         getTitle(): string | undefined;
-        setTitle(value: string): UpdateData;
+        setTitle(value: string): UpdateBookData;
 
         hasAuthor(): boolean;
         clearAuthor(): void;
         getAuthor(): string | undefined;
-        setAuthor(value: string): UpdateData;
+        setAuthor(value: string): UpdateBookData;
 
         hasDescription(): boolean;
         clearDescription(): void;
         getDescription(): string | undefined;
-        setDescription(value: string): UpdateData;
+        setDescription(value: string): UpdateBookData;
 
         hasImageUrl(): boolean;
         clearImageUrl(): void;
         getImageUrl(): string | undefined;
-        setImageUrl(value: string): UpdateData;
+        setImageUrl(value: string): UpdateBookData;
 
         hasPrice(): boolean;
         clearPrice(): void;
         getPrice(): number | undefined;
-        setPrice(value: number): UpdateData;
+        setPrice(value: number): UpdateBookData;
 
         hasPages(): boolean;
         clearPages(): void;
         getPages(): number | undefined;
-        setPages(value: number): UpdateData;
+        setPages(value: number): UpdateBookData;
 
         hasPublishedDate(): boolean;
         clearPublishedDate(): void;
         getPublishedDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
-        setPublishedDate(value?: google_protobuf_timestamp_pb.Timestamp): UpdateData;
+        setPublishedDate(value?: google_protobuf_timestamp_pb.Timestamp): UpdateBookData;
 
         serializeBinary(): Uint8Array;
-        toObject(includeInstance?: boolean): UpdateData.AsObject;
-        static toObject(includeInstance: boolean, msg: UpdateData): UpdateData.AsObject;
+        toObject(includeInstance?: boolean): UpdateBookData.AsObject;
+        static toObject(includeInstance: boolean, msg: UpdateBookData): UpdateBookData.AsObject;
         static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
         static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-        static serializeBinaryToWriter(message: UpdateData, writer: jspb.BinaryWriter): void;
-        static deserializeBinary(bytes: Uint8Array): UpdateData;
-        static deserializeBinaryFromReader(message: UpdateData, reader: jspb.BinaryReader): UpdateData;
+        static serializeBinaryToWriter(message: UpdateBookData, writer: jspb.BinaryWriter): void;
+        static deserializeBinary(bytes: Uint8Array): UpdateBookData;
+        static deserializeBinaryFromReader(message: UpdateBookData, reader: jspb.BinaryReader): UpdateBookData;
     }
 
-    export namespace UpdateData {
+    export namespace UpdateBookData {
         export type AsObject = {
             title?: string,
             author?: string,
@@ -238,8 +241,8 @@ export class CreateBookRequest extends jspb.Message {
 
     hasBook(): boolean;
     clearBook(): void;
-    getBook(): CreateBookRequest.CreateData | undefined;
-    setBook(value?: CreateBookRequest.CreateData): CreateBookRequest;
+    getBook(): CreateBookRequest.CreateBookData | undefined;
+    setBook(value?: CreateBookRequest.CreateBookData): CreateBookRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateBookRequest.AsObject;
@@ -253,49 +256,49 @@ export class CreateBookRequest extends jspb.Message {
 
 export namespace CreateBookRequest {
     export type AsObject = {
-        book?: CreateBookRequest.CreateData.AsObject,
+        book?: CreateBookRequest.CreateBookData.AsObject,
     }
 
 
-    export class CreateData extends jspb.Message { 
+    export class CreateBookData extends jspb.Message { 
         getTitle(): string;
-        setTitle(value: string): CreateData;
+        setTitle(value: string): CreateBookData;
         getAuthor(): string;
-        setAuthor(value: string): CreateData;
+        setAuthor(value: string): CreateBookData;
 
         hasDescription(): boolean;
         clearDescription(): void;
         getDescription(): string | undefined;
-        setDescription(value: string): CreateData;
+        setDescription(value: string): CreateBookData;
 
         hasImageUrl(): boolean;
         clearImageUrl(): void;
         getImageUrl(): string | undefined;
-        setImageUrl(value: string): CreateData;
+        setImageUrl(value: string): CreateBookData;
 
         hasPrice(): boolean;
         clearPrice(): void;
         getPrice(): number | undefined;
-        setPrice(value: number): CreateData;
+        setPrice(value: number): CreateBookData;
         getPages(): number;
-        setPages(value: number): CreateData;
+        setPages(value: number): CreateBookData;
 
         hasPublishedDate(): boolean;
         clearPublishedDate(): void;
         getPublishedDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
-        setPublishedDate(value?: google_protobuf_timestamp_pb.Timestamp): CreateData;
+        setPublishedDate(value?: google_protobuf_timestamp_pb.Timestamp): CreateBookData;
 
         serializeBinary(): Uint8Array;
-        toObject(includeInstance?: boolean): CreateData.AsObject;
-        static toObject(includeInstance: boolean, msg: CreateData): CreateData.AsObject;
+        toObject(includeInstance?: boolean): CreateBookData.AsObject;
+        static toObject(includeInstance: boolean, msg: CreateBookData): CreateBookData.AsObject;
         static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
         static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-        static serializeBinaryToWriter(message: CreateData, writer: jspb.BinaryWriter): void;
-        static deserializeBinary(bytes: Uint8Array): CreateData;
-        static deserializeBinaryFromReader(message: CreateData, reader: jspb.BinaryReader): CreateData;
+        static serializeBinaryToWriter(message: CreateBookData, writer: jspb.BinaryWriter): void;
+        static deserializeBinary(bytes: Uint8Array): CreateBookData;
+        static deserializeBinaryFromReader(message: CreateBookData, reader: jspb.BinaryReader): CreateBookData;
     }
 
-    export namespace CreateData {
+    export namespace CreateBookData {
         export type AsObject = {
             title: string,
             author: string,
@@ -436,6 +439,11 @@ export class UpdateAuthorRequest extends jspb.Message {
     getAuthorid(): string;
     setAuthorid(value: string): UpdateAuthorRequest;
 
+    hasData(): boolean;
+    clearData(): void;
+    getData(): UpdateAuthorRequest.UpdateAuthorData | undefined;
+    setData(value?: UpdateAuthorRequest.UpdateAuthorData): UpdateAuthorRequest;
+
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): UpdateAuthorRequest.AsObject;
     static toObject(includeInstance: boolean, msg: UpdateAuthorRequest): UpdateAuthorRequest.AsObject;
@@ -449,37 +457,38 @@ export class UpdateAuthorRequest extends jspb.Message {
 export namespace UpdateAuthorRequest {
     export type AsObject = {
         authorid: string,
+        data?: UpdateAuthorRequest.UpdateAuthorData.AsObject,
     }
 
 
-    export class UpdateData extends jspb.Message { 
+    export class UpdateAuthorData extends jspb.Message { 
 
         hasName(): boolean;
         clearName(): void;
         getName(): string | undefined;
-        setName(value: string): UpdateData;
+        setName(value: string): UpdateAuthorData;
 
         hasImageUrl(): boolean;
         clearImageUrl(): void;
         getImageUrl(): string | undefined;
-        setImageUrl(value: string): UpdateData;
+        setImageUrl(value: string): UpdateAuthorData;
 
         hasDescription(): boolean;
         clearDescription(): void;
         getDescription(): string | undefined;
-        setDescription(value: string): UpdateData;
+        setDescription(value: string): UpdateAuthorData;
 
         serializeBinary(): Uint8Array;
-        toObject(includeInstance?: boolean): UpdateData.AsObject;
-        static toObject(includeInstance: boolean, msg: UpdateData): UpdateData.AsObject;
+        toObject(includeInstance?: boolean): UpdateAuthorData.AsObject;
+        static toObject(includeInstance: boolean, msg: UpdateAuthorData): UpdateAuthorData.AsObject;
         static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
         static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-        static serializeBinaryToWriter(message: UpdateData, writer: jspb.BinaryWriter): void;
-        static deserializeBinary(bytes: Uint8Array): UpdateData;
-        static deserializeBinaryFromReader(message: UpdateData, reader: jspb.BinaryReader): UpdateData;
+        static serializeBinaryToWriter(message: UpdateAuthorData, writer: jspb.BinaryWriter): void;
+        static deserializeBinary(bytes: Uint8Array): UpdateAuthorData;
+        static deserializeBinaryFromReader(message: UpdateAuthorData, reader: jspb.BinaryReader): UpdateAuthorData;
     }
 
-    export namespace UpdateData {
+    export namespace UpdateAuthorData {
         export type AsObject = {
             name?: string,
             imageUrl?: string,
@@ -558,8 +567,8 @@ export class CreateAuthorRequest extends jspb.Message {
 
     hasAuthor(): boolean;
     clearAuthor(): void;
-    getAuthor(): CreateAuthorRequest.AuthorCreateData | undefined;
-    setAuthor(value?: CreateAuthorRequest.AuthorCreateData): CreateAuthorRequest;
+    getAuthor(): CreateAuthorRequest.CreateAuthorData | undefined;
+    setAuthor(value?: CreateAuthorRequest.CreateAuthorData): CreateAuthorRequest;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): CreateAuthorRequest.AsObject;
@@ -573,35 +582,35 @@ export class CreateAuthorRequest extends jspb.Message {
 
 export namespace CreateAuthorRequest {
     export type AsObject = {
-        author?: CreateAuthorRequest.AuthorCreateData.AsObject,
+        author?: CreateAuthorRequest.CreateAuthorData.AsObject,
     }
 
 
-    export class AuthorCreateData extends jspb.Message { 
+    export class CreateAuthorData extends jspb.Message { 
         getName(): string;
-        setName(value: string): AuthorCreateData;
+        setName(value: string): CreateAuthorData;
 
         hasImageUrl(): boolean;
         clearImageUrl(): void;
         getImageUrl(): string | undefined;
-        setImageUrl(value: string): AuthorCreateData;
+        setImageUrl(value: string): CreateAuthorData;
 
         hasDescription(): boolean;
         clearDescription(): void;
         getDescription(): string | undefined;
-        setDescription(value: string): AuthorCreateData;
+        setDescription(value: string): CreateAuthorData;
 
         serializeBinary(): Uint8Array;
-        toObject(includeInstance?: boolean): AuthorCreateData.AsObject;
-        static toObject(includeInstance: boolean, msg: AuthorCreateData): AuthorCreateData.AsObject;
+        toObject(includeInstance?: boolean): CreateAuthorData.AsObject;
+        static toObject(includeInstance: boolean, msg: CreateAuthorData): CreateAuthorData.AsObject;
         static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
         static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-        static serializeBinaryToWriter(message: AuthorCreateData, writer: jspb.BinaryWriter): void;
-        static deserializeBinary(bytes: Uint8Array): AuthorCreateData;
-        static deserializeBinaryFromReader(message: AuthorCreateData, reader: jspb.BinaryReader): AuthorCreateData;
+        static serializeBinaryToWriter(message: CreateAuthorData, writer: jspb.BinaryWriter): void;
+        static deserializeBinary(bytes: Uint8Array): CreateAuthorData;
+        static deserializeBinaryFromReader(message: CreateAuthorData, reader: jspb.BinaryReader): CreateAuthorData;
     }
 
-    export namespace AuthorCreateData {
+    export namespace CreateAuthorData {
         export type AsObject = {
             name: string,
             imageUrl?: string,

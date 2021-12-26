@@ -17,7 +17,7 @@ message Book {
     string id = 1;
     string title = 2;
     string author = 3;
-    string description = 4;
+    optional string description = 4;
     optional string image_url = 5;
     optional uint32 price = 6;
     optional uint32 pages = 7;
@@ -38,7 +38,7 @@ message DeleteBookRequest {
 
 message UpdateBookRequest {
     string bookId = 1;
-    message UpdateData {
+    message UpdateBookData {
         optional string title = 2;
         optional string author = 3;
         optional string description = 4;
@@ -47,7 +47,7 @@ message UpdateBookRequest {
         optional uint32 pages = 7;
         optional google.protobuf.Timestamp published_date = 8;
     }
-    UpdateData data = 2;
+    UpdateBookData data = 2;
 }
 
 message UpdateBookResponse {
@@ -55,7 +55,7 @@ message UpdateBookResponse {
 }
 
 message CreateBookRequest {
-    message CreateData {
+    message CreateBookData {
         string title = 2;
         string author = 3;
         optional string description = 4;
@@ -64,7 +64,7 @@ message CreateBookRequest {
         uint32 pages = 7;
         optional google.protobuf.Timestamp published_date = 8;
     }
-    CreateData book = 1;
+    CreateBookData book = 1;
 }
 
 message CreateBookResponse {
@@ -102,11 +102,12 @@ message GetAuthorResponse {
 
 message UpdateAuthorRequest {
     string authorId = 1;
-    message UpdateData {
+    message UpdateAuthorData {
         optional string name = 2;
         optional string image_url = 3;
         optional string description = 4;
     }
+    UpdateAuthorData data = 2;
 }
 
 message UpdateAuthorResponse {
@@ -122,12 +123,12 @@ message ListAuthorResponse {
 }
 
 message CreateAuthorRequest {
-    message AuthorCreateData {
+    message CreateAuthorData {
         string name = 2;
         optional string image_url = 3;
         optional string description = 4; 
     } 
-    AuthorCreateData author = 1;
+    CreateAuthorData author = 1;
 }
 
 message CreateAuthorResponse {
