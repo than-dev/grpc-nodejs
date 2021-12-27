@@ -85,7 +85,7 @@ describe('Should get a book correctly', (assert) => {
 	sandbox.restore();
 });
 
-describe('Should give an error when try to remove a nonexistent book', (assert) => {
+describe('Should give an error when try to remove a inexistent book', (assert) => {
 	const deleteBookSpy = sandbox.spy(globalDb, 'deleteBook');
 	sandbox.stub(globalDb, 'save').returns();
 	sandbox.stub(globalDb, 'load').returns();
@@ -132,7 +132,7 @@ describe('Should remove a existent book', (assert) => {
 	);
 });
 
-describe('Should give an error when try to get a nonexistent book', (assert) => {
+describe('Should give an error when try to get a inexistent book', (assert) => {
 	const dbSpy = sandbox.spy(globalDb);
 	const impl = bookstoreImpl(dbSpy as unknown as DB);
 	const bookId = 'nonexistingbookid';
@@ -154,7 +154,7 @@ describe('Should give an error when try to get a nonexistent book', (assert) => 
 	sandbox.restore();
 });
 
-describe('Should give an error when try to update a nonexistent book', (assert) => {
+describe('Should give an error when try to update a inexistent book', (assert) => {
 	const localDb = new DB(undefined, initialData);
 	const updateBookSpy = sinon.spy(localDb, 'updateBook');
 
@@ -230,7 +230,7 @@ describe('Should not add an existent book', (assert) => {
 	);
 });
 
-describe('Should not add a book with a nonexistent author', (assert) => {
+describe('Should not add a book with a inexistent author', (assert) => {
 	const localDb = new DB(undefined, initialData);
 	const addBookSpy = sinon.spy(localDb, 'addBook');
 	const addBookData = new CreateBookRequest.CreateBookData()
