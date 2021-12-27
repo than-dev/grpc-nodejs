@@ -1,0 +1,12 @@
+{
+  "details": {
+    "methodFqn": "Authors.DeleteAuthor"
+  },
+  "requests": [
+    {
+      "location": "DeleteAuthor-request.json"
+    }
+  ],
+  "operationType": "unary",
+  "invokerName": "grpc"
+}

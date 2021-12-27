@@ -1,0 +1,12 @@
+{
+  "details": {
+    "methodFqn": "Bookstore.CreateBook"
+  },
+  "requests": [
+    {
+      "location": "CreateBook-request.json"
+    }
+  ],
+  "operationType": "unary",
+  "invokerName": "grpc"
+}

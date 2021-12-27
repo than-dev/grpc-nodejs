@@ -1,0 +1,7 @@
+{
+  "author": {
+    "name": "{{ faker.name.last_name }}",
+    "imageUrl": "fooBar",
+    "description": "fooBar"
+  }
+}

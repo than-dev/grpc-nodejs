@@ -1,0 +1,12 @@
+{
+  "details": {
+    "methodFqn": "Authors.CreateAuthor"
+  },
+  "requests": [
+    {
+      "location": "CreateAuthor-request.json"
+    }
+  ],
+  "operationType": "unary",
+  "invokerName": "grpc"
+}

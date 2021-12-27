@@ -16,15 +16,20 @@ export class Book extends jspb.Message {
     getAuthor(): string;
     setAuthor(value: string): Book;
 
+    hasImageUrl(): boolean;
+    clearImageUrl(): void;
+    getImageUrl(): string | undefined;
+    setImageUrl(value: string): Book;
+
     hasDescription(): boolean;
     clearDescription(): void;
     getDescription(): string | undefined;
     setDescription(value: string): Book;
 
-    hasImageUrl(): boolean;
-    clearImageUrl(): void;
-    getImageUrl(): string | undefined;
-    setImageUrl(value: string): Book;
+    hasPublishedDate(): boolean;
+    clearPublishedDate(): void;
+    getPublishedDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setPublishedDate(value?: google_protobuf_timestamp_pb.Timestamp): Book;
 
     hasPrice(): boolean;
     clearPrice(): void;
@@ -35,11 +40,6 @@ export class Book extends jspb.Message {
     clearPages(): void;
     getPages(): number | undefined;
     setPages(value: number): Book;
-
-    hasPublishedDate(): boolean;
-    clearPublishedDate(): void;
-    getPublishedDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setPublishedDate(value?: google_protobuf_timestamp_pb.Timestamp): Book;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Book.AsObject;
@@ -56,11 +56,11 @@ export namespace Book {
         id: string,
         title: string,
         author: string,
-        description?: string,
         imageUrl?: string,
+        description?: string,
+        publishedDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         price?: number,
         pages?: number,
-        publishedDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
 }
 
@@ -107,26 +107,6 @@ export namespace GetBookResponse {
     }
 }
 
-export class DeleteBookRequest extends jspb.Message { 
-    getBookid(): string;
-    setBookid(value: string): DeleteBookRequest;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): DeleteBookRequest.AsObject;
-    static toObject(includeInstance: boolean, msg: DeleteBookRequest): DeleteBookRequest.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: DeleteBookRequest, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): DeleteBookRequest;
-    static deserializeBinaryFromReader(message: DeleteBookRequest, reader: jspb.BinaryReader): DeleteBookRequest;
-}
-
-export namespace DeleteBookRequest {
-    export type AsObject = {
-        bookid: string,
-    }
-}
-
 export class UpdateBookRequest extends jspb.Message { 
     getBookid(): string;
     setBookid(value: string): UpdateBookRequest;
@@ -165,15 +145,20 @@ export namespace UpdateBookRequest {
         getAuthor(): string | undefined;
         setAuthor(value: string): UpdateBookData;
 
+        hasImageUrl(): boolean;
+        clearImageUrl(): void;
+        getImageUrl(): string | undefined;
+        setImageUrl(value: string): UpdateBookData;
+
         hasDescription(): boolean;
         clearDescription(): void;
         getDescription(): string | undefined;
         setDescription(value: string): UpdateBookData;
 
-        hasImageUrl(): boolean;
-        clearImageUrl(): void;
-        getImageUrl(): string | undefined;
-        setImageUrl(value: string): UpdateBookData;
+        hasPublishedDate(): boolean;
+        clearPublishedDate(): void;
+        getPublishedDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+        setPublishedDate(value?: google_protobuf_timestamp_pb.Timestamp): UpdateBookData;
 
         hasPrice(): boolean;
         clearPrice(): void;
@@ -184,11 +169,6 @@ export namespace UpdateBookRequest {
         clearPages(): void;
         getPages(): number | undefined;
         setPages(value: number): UpdateBookData;
-
-        hasPublishedDate(): boolean;
-        clearPublishedDate(): void;
-        getPublishedDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
-        setPublishedDate(value?: google_protobuf_timestamp_pb.Timestamp): UpdateBookData;
 
         serializeBinary(): Uint8Array;
         toObject(includeInstance?: boolean): UpdateBookData.AsObject;
@@ -204,11 +184,11 @@ export namespace UpdateBookRequest {
         export type AsObject = {
             title?: string,
             author?: string,
-            description?: string,
             imageUrl?: string,
+            description?: string,
+            publishedDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
             price?: number,
             pages?: number,
-            publishedDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         }
     }
 
@@ -234,6 +214,26 @@ export class UpdateBookResponse extends jspb.Message {
 export namespace UpdateBookResponse {
     export type AsObject = {
         books?: Book.AsObject,
+    }
+}
+
+export class DeleteBookRequest extends jspb.Message { 
+    getBookid(): string;
+    setBookid(value: string): DeleteBookRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): DeleteBookRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: DeleteBookRequest): DeleteBookRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: DeleteBookRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): DeleteBookRequest;
+    static deserializeBinaryFromReader(message: DeleteBookRequest, reader: jspb.BinaryReader): DeleteBookRequest;
+}
+
+export namespace DeleteBookRequest {
+    export type AsObject = {
+        bookid: string,
     }
 }
 
@@ -266,15 +266,20 @@ export namespace CreateBookRequest {
         getAuthor(): string;
         setAuthor(value: string): CreateBookData;
 
+        hasImageUrl(): boolean;
+        clearImageUrl(): void;
+        getImageUrl(): string | undefined;
+        setImageUrl(value: string): CreateBookData;
+
         hasDescription(): boolean;
         clearDescription(): void;
         getDescription(): string | undefined;
         setDescription(value: string): CreateBookData;
 
-        hasImageUrl(): boolean;
-        clearImageUrl(): void;
-        getImageUrl(): string | undefined;
-        setImageUrl(value: string): CreateBookData;
+        hasPublishedDate(): boolean;
+        clearPublishedDate(): void;
+        getPublishedDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+        setPublishedDate(value?: google_protobuf_timestamp_pb.Timestamp): CreateBookData;
 
         hasPrice(): boolean;
         clearPrice(): void;
@@ -282,11 +287,6 @@ export namespace CreateBookRequest {
         setPrice(value: number): CreateBookData;
         getPages(): number;
         setPages(value: number): CreateBookData;
-
-        hasPublishedDate(): boolean;
-        clearPublishedDate(): void;
-        getPublishedDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
-        setPublishedDate(value?: google_protobuf_timestamp_pb.Timestamp): CreateBookData;
 
         serializeBinary(): Uint8Array;
         toObject(includeInstance?: boolean): CreateBookData.AsObject;
@@ -302,11 +302,11 @@ export namespace CreateBookRequest {
         export type AsObject = {
             title: string,
             author: string,
-            description?: string,
             imageUrl?: string,
+            description?: string,
+            publishedDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
             price?: number,
             pages: number,
-            publishedDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
         }
     }
 

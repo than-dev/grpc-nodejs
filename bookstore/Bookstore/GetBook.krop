@@ -1,0 +1,12 @@
+{
+  "details": {
+    "methodFqn": "Bookstore.GetBook"
+  },
+  "requests": [
+    {
+      "location": "GetBook-request.json"
+    }
+  ],
+  "operationType": "unary",
+  "invokerName": "grpc"
+}

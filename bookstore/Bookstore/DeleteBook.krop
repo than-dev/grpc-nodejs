@@ -1,0 +1,12 @@
+{
+  "details": {
+    "methodFqn": "Bookstore.DeleteBook"
+  },
+  "requests": [
+    {
+      "location": "DeleteBook-request.json"
+    }
+  ],
+  "operationType": "unary",
+  "invokerName": "grpc"
+}

@@ -1,0 +1,11 @@
+{
+  "book": {
+    "title": "fofoBard24",
+    "author": "25eb92ae54cc5089e9b995f4176795d3c67d927069a3009a655c76cf0e447536",
+    "description": "fooBar",
+    "imageUrl": "fooBar",
+    "price": 123,
+    "pages": 123,
+    "publishedDate": "1970-01-01T00:02:03.000000123Z"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "details": {
+    "methodFqn": "Bookstore.UpdateBook"
+  },
+  "requests": [
+    {
+      "location": "UpdateBook-request.json"
+    }
+  ],
+  "operationType": "unary",
+  "invokerName": "grpc"
+}

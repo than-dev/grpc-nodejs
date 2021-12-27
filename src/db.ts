@@ -12,8 +12,8 @@ import {
 import { camelCase } from 'change-case';
 
 export class DB {
-	// Importante ser pública
-	// Caso contrário não conseguimos buscar do teste
+	// Important be public
+	// Otherwise we can't get from test
 	data: {
 		books: Map<string, Book.AsObject>;
 		authors: Map<string, Author.AsObject>;
@@ -91,16 +91,15 @@ export class DB {
 	}
 
 	getBook(id: string) {
-		const doc = this.data.books.get(id);
-		if (!doc) return;
-		return this.fromObject(new Book(), doc) as Book;
+		const book = this.data.books.get(id);
+		if (!book) return;
+		return this.fromObject(new Book(), book) as Book;
 	}
 
 	listBooks() {
-		return [...this.data.books.values()].map((doc) => {
-			console.log(this.fromObject(new Book(), doc));
-			return this.fromObject(new Book(), doc);
-		}) as Book[];
+		return [...this.data.books.values()].map((doc) =>
+			this.fromObject(new Book(), doc)
+		) as Book[];
 	}
 
 	addAuthor(author: CreateAuthorRequest.CreateAuthorData) {
@@ -153,6 +152,7 @@ export class DB {
 			if (!/^set(?!Extension).*/g.test(property)) continue;
 			const propName = camelCase(property.replace('set', ''));
 			const setter: (value: any) => typeof instance = instance[property];
+
 			setter.call(instance, document[propName]);
 		}
 		return instance;

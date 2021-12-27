@@ -194,8 +194,6 @@ function deserialize_google_protobuf_Empty(buffer_arg) {
 }
 
 
-// --------- BOOKSTORE --------- //
-//
 var BookstoreService = exports.BookstoreService = {
   getBook: {
     path: '/Bookstore/GetBook',
@@ -255,8 +253,6 @@ var BookstoreService = exports.BookstoreService = {
 };
 
 exports.BookstoreClient = grpc.makeGenericClientConstructor(BookstoreService);
-// --------- AUTHOR --------- //
-//
 var AuthorsService = exports.AuthorsService = {
   getAuthor: {
     path: '/Authors/GetAuthor',

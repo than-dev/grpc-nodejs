@@ -1,0 +1,12 @@
+{
+  "details": {
+    "methodFqn": "Authors.GetAuthor"
+  },
+  "requests": [
+    {
+      "location": "GetAuthor-request.json"
+    }
+  ],
+  "operationType": "unary",
+  "invokerName": "grpc"
+}
