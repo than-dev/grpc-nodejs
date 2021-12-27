@@ -23,7 +23,7 @@ export class DB {
 	};
 	private readonly dbPath = path.resolve(__dirname, '../db/db.json');
 
-	constructor(dbPath = null, initialData = null) {
+	constructor(dbPath?: string, initialData?: any) {
 		if (dbPath) this.dbPath = dbPath;
 		try {
 			if (!initialData) accessSync(this.dbPath, constants.F_OK);

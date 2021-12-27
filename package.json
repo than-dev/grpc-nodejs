@@ -5,10 +5,28 @@
   "main": "index.js",
   "scripts": {
     "start": "node dist/server.js",
+    "test": "ava --fail-fast -v -T 30s --color",
+    "coverage": "nyc --all --skip-empty ava",
     "build": "tsc",
     "compile:js": "grpc_tools_node_protoc --js_out=import_style=commonjs,binary:./proto --grpc_out=grpc_js:./proto -I ./proto ./proto/*.proto",
     "compile:ts": "grpc_tools_node_protoc --plugin=protoc-gen-ts=./node_modules/.bin/protoc-gen-ts --ts_out=grpc_js:./proto -I ./proto ./proto/*.proto",
     "compile": "npm run compile:js && npm run compile:ts"
+  },
+  "nyc": {
+    "exclude": [
+      "**/index.ts",
+      "**/db.ts",
+      "**/server.ts",
+      "**/*.test.ts"
+    ]
+  },
+  "ava": {
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
   },
   "repository": {
     "type": "git",
@@ -35,9 +53,14 @@
     "@types/google-protobuf": "^3.15.5",
     "@types/long": "^4.0.1",
     "@types/node": "^17.0.4",
+    "@types/sinon": "^10.0.6",
+    "ava": "^3.15.0",
     "google-protobuf": "3.18.0",
     "grpc-tools": "^1.11.2",
     "grpc_tools_node_protoc_ts": "^5.3.2",
+    "nyc": "^15.1.0",
+    "sinon": "^12.0.1",
+    "ts-node": "^10.4.0",
     "typescript": "^4.5.4"
   }
 }

@@ -86,7 +86,7 @@ function CreateBook(
 	}
 }
 
-function assertBook(database: DB, id: string) {
+export function assertBook(database: DB, id: string) {
 	const book = database.getBook(id);
 	if (!book) throw new Error(`Book ${id} not found`);
 	return book;
